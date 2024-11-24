@@ -1,0 +1,108 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and local database files
+*.log
+*.sqlite3
+*.db
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.cache
+coverage.xml
+nosetests.xml
+*.code-workspace
+
+# Environment variables
+*.env
+.env.*
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs
+# VS Code
+.vscode/
+*.code-workspace
+# PyCharm
+.idea/
+*.iml
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook metadata
+.ipynb_checkpoints/
+
+# Pytest cache
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# Ignore virtual environments
+**/env/
+**/venv/
+
+# Ignore Kaggle datasets
+kagglehub/
+kaggle.json
+
+# Ignore model checkpoints
+checkpoints/
+*.pth
+*.ckpt
+
+# Ignore large files (if added by mistake)
+*.tar.gz
+*.zip
+*.tar
+
+# Ignore Python wheels
+*.whl
+
+# Ignore configuration
+config.yaml
+
+*.python-version
