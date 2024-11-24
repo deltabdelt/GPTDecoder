@@ -90,10 +90,7 @@ class CustomDataLoader:
         self.val_dataset = CustomTextDataset(val_df, text_col, label_col, 
                                              labels_lookup_dict=self.train_dataset.labels_lookup_dict, 
                                              block_size=self.train_dataset.block_size)
-        
-        # # Prepare PyTorch DataLoaders
-        # self.train_loader = DataLoader(self.train_dataset, batch_size=batch_size, shuffle=True, collate_fn=self.collate_fn)
-        # self.val_loader = DataLoader(self.val_dataset, batch_size=batch_size, shuffle=False, collate_fn=self.collate_fn)
+
     
     @staticmethod
     def collate_fn(batch):
