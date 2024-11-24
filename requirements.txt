@@ -3,3 +3,4 @@ tiktoken==0.8.0
 kagglehub==0.3.4
 pandas==2.2.3
 loguru==0.7.2
+scikit-learn==1.5.2
