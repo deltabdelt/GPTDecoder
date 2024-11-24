@@ -1,8 +1,11 @@
-from model import GPTDecoder
+import os
 from typing import Dict
+
 import torch
-from torch.utils.data import DataLoader
 from loguru import logger
+from torch.utils.data import DataLoader
+
+from model import GPTDecoder
 
 
 class TrainingLoop:
@@ -84,7 +87,7 @@ class TrainingLoop:
         self.model.load_state_dict(checkpoint['model_state_dict'])  # Load model weights
         self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])  # Load optimizer state
         self.best_val_loss = checkpoint['best_val_loss']  # Restore best validation loss
-        self.start_epoch = checkpoint['epoch'] + 1  # Resume from the next epoch
+        # self.start_epoch = checkpoint['epoch'] + 1  # Resume from the next epoch
         logger.info(f"Checkpoint loaded from: {load_path}, resuming from epoch {self.start_epoch}")
 
     def train(self, train_loader: DataLoader, val_loader: DataLoader, save_model_path: str, resume_path: str = None):
@@ -97,6 +100,8 @@ class TrainingLoop:
             save_model_path: Directory to save checkpoints.
             resume_path: Path to a checkpoint to resume training from.
         """
+        os.makedirs(save_model_path, exist_ok=True)
+
         # Load checkpoint if resume_path is provided
         if resume_path:
             self.load_checkpoint(resume_path)
