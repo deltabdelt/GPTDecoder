@@ -104,7 +104,7 @@ class GPTDecoder(nn.Module):
 
     def _initialise_model_params(self, model_params: Dict) -> None:
 
-        self.vocab_size = model_params.get("head_size")
+        self.vocab_size = model_params.get("vocab_size")
         self.n_embds = model_params.get("num_embeddings")
         self.block_size = model_params.get("block_size")
         self.n_heads = model_params.get("num_heads")
