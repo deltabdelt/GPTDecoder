@@ -11,6 +11,7 @@ from model import GPTDecoder
 class TrainingLoop:
     def __init__(self, model_params: Dict, training_params: Dict) -> None:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # Use GPU if available
+        # self.device = torch.device("mps" if torch.backends.mps.is_available() else "cpu") # Use GPU if available - for Mac
         self._initialise_training_params(training_params)
         self.model = GPTDecoder(model_params=model_params).to(self.device)  # Move model to the device
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=self.lr)
